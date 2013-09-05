@@ -1,4 +1,6 @@
 Dummy::Application.routes.draw do
+  resources :contact_forms, only: :create
+  root to: "contact_forms#new"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -39,7 +41,7 @@ Dummy::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

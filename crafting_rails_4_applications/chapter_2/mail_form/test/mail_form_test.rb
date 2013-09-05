@@ -2,6 +2,11 @@ require 'test_helper'
 require 'fixtures/sample_mail'
 
 class MailFormTest < ActiveSupport::TestCase
+
+  setup do
+    ActionMailer::Base.deliveries.clear
+  end
+
   test "sample mail has name and email as attributes" do
     sample = SampleMail.new
 
